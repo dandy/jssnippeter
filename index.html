@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JS Snippeter</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Javascript quick snipper" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" href="css/codemirror.css" />
+  <link rel="stylesheet" type="text/css" href="css/theme/ttcn.css" />
+  <link rel="stylesheet" type="text/css" href="css/theme/neat.css" />
+  <link rel="stylesheet" type="text/css" href="css/theme/night.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/select2.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css" />
+</head>
+
+<body id="app">
+  <div class="container-fluid">
+    <div class="row  head-row">
+    <div class="col-lg-12">
+      <h1 class="title" style="">JS Snippeter</h1>
+      <button class="btn btn-sm btn-success new-snippet-btn">New Snippet</button>
+    </div>
+    </div>
+
+    <div class="row" style="margin-top:10px; margin-bottom:10px">
+      <div id="main_js" class="col-lg-6">
+        <h4 style="margin: 0px; padding: 0px">Javascript</h4>
+        <div class="jsLibraries" style="margin-top: 10px; margin-bottom: 10px;">
+          <select id="jsLibraries" name="jsLibraries" data-bind="value: selectedJSLib, optionsValue:'id', optionsText:'text', select2:{data:JSLibs(), onSelect: onSelectJSLib, placeholder:'Add Javascript Library'}" class="select2 form-control" style="width: 300px"></select><a href="#" data-toggle="modal" data-target="#add-custom-script-dialog" style="margin-left: 10px">Add custom script</a>
+        </div>
+        <div id="jsLibsULWrapper" class="pull-left">
+          <ul id="jsLibsSortable" data-bind="sortable: selectedJSLibs">
+            <li class="ui-state-default">
+              <span data-bind="text: text"></span><i class="glyphicon glyphicon-remove remove-icon" data-bind="click: $root.removeJSLib"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <textarea id="js_editor" class="col-lg-12" rows="15" placeholder="Scripts"></textarea>
+      </div>
+
+      <div id="main_html" class="col-lg-6">
+        <h4>HTML</h4>
+        <textarea id="html_editor" class="col-lg-12" rows="15" placeholder="Html"></textarea>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="col-lg-6" id="main_css">
+        <h4>CSS</h4>
+        <select id="cssLibraries" name="cssLibraries" class="select2 form-control" multiple="true" style="width: 300px"></select>
+        <textarea id="css_editor" class="col-lg-12" rows="15" placeholder="Css"></textarea>
+      </div>
+
+      <div class="col-lg-6">
+        <h4>Output</h4>
+        <div id="output" class="col-lg-12">
+          <iframe></iframe>
+        </div>
+        <button id="clearIframe" class="btn btn-primary">Clear</button>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="col-lg-6" style="margin-top:20px">
+        <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Run" />
+      </div>
+    </div>
+
+  </div>
+  <script data-main="scripts/main" src="scripts/require.js"></script>
+  <!-- Modal -->
+  <div class="modal fade" id="add-custom-script-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add custom script</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="scriptUrl" class="col-sm-3 control-label">Script URL</label>
+                <div class="col-sm-9">
+                  <input type="input" data-bind="textInput: scriptToAdd" class="form-control" id="scriptUrl" placeholder="Script URL"><br />
+                  <span data-bind="text: customScriptName"></span>
+                </div>
+              </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-sm btn-success" data-bind="click: addCustomScript">Add Script</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

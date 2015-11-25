@@ -1,0 +1,51 @@
+textarea{
+	border:1px solid red;
+}
+h1.title{
+	font-size: 16px; font-weight: bold;
+	margin: 15px 0px;
+	color:white;
+	text-shadow: 0px 1px 1px #333;
+	width: 115px;
+	float:left;
+}
+.new-snippet-btn{
+	float:left;
+	width: 100px;
+	margin-top:9px;
+}
+#output iframe{
+	border:1px solid #ccc;
+	height: 100%;
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.head-row{
+	background:#295D72
+}
+#jsLibsSortable{
+	margin:0px;
+	padding:0px;
+	list-style: none;
+}
+
+#jsLibsULWrapper{
+	margin-bottom:10px;
+}
+
+#jsLibsSortable li{
+	display: inline;
+	float: left;
+	padding: 2px 5px;
+	font-size: 11px;
+	margin-right: 2px;
+	border-radius: 4px;
+	cursor: move;
+}
+.remove-icon{
+	vertical-align: text-bottom;
+	cursor: default;
+	margin-left: 3px;
+}
