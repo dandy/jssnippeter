@@ -17,12 +17,10 @@ define(function () {
         'dataTables': 'https://cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css'
     }
 
-
     var _select2JavascriptLibs = [],
         _select2CssLibs = [];
 
     for (var libName in jsLibraries) {
-
         _select2JavascriptLibs.push({
             id: jsLibraries[libName],
             text: libName

@@ -16,8 +16,6 @@ require(["CodeEditors", "DataUtils", "jquery", "select2", "OutputFrame","knockou
 
     $(document).ready(function () {
         codeEditor.init();
-
-        $("#jsLibsSortable").sortable();
         var vm = new mainVM();
         ko.applyBindings(vm);
 

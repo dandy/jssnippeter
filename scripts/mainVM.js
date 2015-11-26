@@ -1,7 +1,3 @@
-/**
- * Created by Dandy on 10/17/2015.
- */
-
 define(["knockout","DataUtils"], function(ko,utils){
 
     var mainVM = function(){
@@ -23,10 +19,7 @@ define(["knockout","DataUtils"], function(ko,utils){
         self.customScriptName = ko.computed(function(){
             var script = self.scriptToAdd();
             var scriptName = script.substr(script.lastIndexOf('/') + 1);
-
-            console.log(self.selectedJSLibs())
             return scriptName;
-
         })
 
         self.addCustomScript = function(){
@@ -38,7 +31,6 @@ define(["knockout","DataUtils"], function(ko,utils){
                 self.selectedJSLibs.push(event.params.data);
                 self.selectedJSLib(null);
             }
-
             self.JSLibs.remove(event.params.data);
         };
 
@@ -47,16 +39,8 @@ define(["knockout","DataUtils"], function(ko,utils){
 
         self.selectedCSSLibsText = ko.computed(function () {
             var selectedDescriptions = [];
-            //ko.utils.arrayForEach(self.CSSLibs(), function (item) {
-            //    if (self.selectedCSSLibs.indexOf(item.id)!==-1)
-            //        selectedDescriptions.push(item);
-            //});
             return selectedDescriptions;
         });
-
-
     };
-
     return mainVM;
-
 });

@@ -43,31 +43,3 @@ define(["jquery","jquery.localstorage.min","cm/lib/codemirror",'cm/mode/htmlmixe
     }
 
 });
-
-//function getScripts() {
-//      var jsScriptsOrder = [];
-//      $.each($("#jsLibraries").select2('data'), function(i, data) {
-//        jsScriptsOrder.push(data.id);
-//      });
-//
-//      var scriptsUrl = [];
-//      jsScriptsOrder.forEach(function(scriptUrl) {
-//        scriptsUrl.push(scriptUrl);
-//      });
-//
-//      return scriptsUrl;
-//}
-//
-//function getCss(){
-//  var cssLibsOrder = [];
-//  $.each($("#cssLibraries").select2('data'), function(i, data) {
-//    cssLibsOrder.push(data.id);
-//  });
-//
-//  var cssLibsUrls = [];
-//  cssLibsOrder.forEach(function(cssLibUrl) {
-//    cssLibsUrls.push(cssLibUrl);
-//  });
-//
-//  return cssLibsUrls;
-//}
